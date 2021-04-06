@@ -1,0 +1,20 @@
+{
+  "name": "cat-search",
+  "version": "1.0.0",
+  "description": "Programmers 2020 Dev-Matching",
+  "main": "main.js",
+  "scripts": {
+    "build": "babel src -d dist -w",
+    "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^23.11.0",
+    "jest": "^26.0.1"
+  }
+}

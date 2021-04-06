@@ -1,0 +1,221 @@
+:root {
+  --color-mode: 'light';
+  --color-dark: black;
+  --color-light: white;
+  --background: white;
+  --text-color: black;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  transition: background 500ms ease-in-out, color 200ms ease;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --background: var(--color-dark);
+    --text-color: var(--color-light);
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --background: var(--color-dark);
+  --text-color: var(--color-light);
+}
+
+.searching-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.search-box {
+  font-size: 20px;
+}
+
+.recent-keywords {
+  margin-top: 10px;
+}
+
+.keyword {
+  background-color: rgb(255, 127, 0);
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.random-btn {
+  font-size: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.results-section {
+  margin-top: 8%;
+}
+
+.notice-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 370px;
+  margin: auto;
+}
+
+.notice {
+  margin-top: 8%;
+  text-align: center;
+}
+
+.notice-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  /* TODO: 카드 정렬하기 */
+  margin-left: calc((100% - (20% * 4)) / 4);
+  width: 250px;
+  height: 350px;
+}
+
+.cat-card:hover {
+  cursor: pointer;
+}
+
+.card-image {
+  height: 70%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.modal-contents {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 35%;
+  height: 70%;
+  padding: 10px;
+  background-color: var(--background);
+  color: var(--text-color);
+
+  /* TODO: box-shadow */
+}
+
+.modal-image {
+  height: 60%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+.spinner-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 49%;
+}
+
+.error-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-image {
+  margin-top: 8%;
+  border-radius: 10%;
+}
+
+.status-code {
+  margin: 0;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.error-message {
+  margin-top: -15px;
+  font-size: 20px;
+}
+
+.return-btn {
+  margin-top: 15px;
+}
+
+.darkmode-btn {
+  font-size: 3rem;
+  position: fixed;
+  top: 1rem;
+  right: 5rem;
+  z-index: 3;
+  cursor: pointer;
+}
